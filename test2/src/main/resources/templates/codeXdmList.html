@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codeGroupXdmList</title>
+</head>
+<body>
+    <table>
+    	<tr>
+    		<td>체크박스</td>
+    		<td>#</td>
+    		<td>그룹코드seq</td>
+    		<td>그룹코드이름</td>
+    		<td>코드delNy</td>
+    		<td>코드seq</td>
+    		<td>코드이름</td>
+    		<td>코드수정일</td>
+    	
+    	</tr>
+    	
+    	
+    	
+    	<!-- list : ${list} >> for문처럼 list를 사용하겠다는 뜻
+    	${list} >> 앞에서 받아온 list, controller에 있는 이름과 동일하게 사용해야함
+    	관례적으로 다른 사람의 코드를 사용하기 위해 list를 이름으로 사용함 -->
+    	<!-- th:if="${!#lists.isEmpty(list)}"
+    	if문으로 데이터가 있을 경우 없을 경우로 나누고 두 케이스로 추출-->
+    	
+    	<tr th:if="${#lists.isEmpty(list)}">
+    	    <td colspan="5">There is no data!!!</td>
+    		
+    	</tr>
+    	
+    	<!-- 목록은 list, 상세페이지는 item으로 명명 -->
+    	<tr th:if="${!#lists.isEmpty(list)}" th:each="list:${list}">
+    	<td> </td>
+    	<td> </td>
+    	 <td th:text="${list.codeGroupSeq}"></td>
+    		<td th:text="${list.codeGroupName}"></td>
+    		<td th:if="${list.delNy eq 0}">N</td>
+    		<td th:text="${list.seq}">N</td>
+    		<td th:text="${list.name}"></td>
+    		<td th:text="${#dates.format(list.modifyDate, 'yyyy-MM-dd일 HH:mm:ss')}"></td>
+    	<!--
+    		<td th:text="${list.cgSeq}"></td>
+    		<td th:text="${list.cgName}"></td>
+    		<td th:text="${list.cdDelNy}"></td>
+    		<td th:text="${list.cdName}"></td>
+       		<td th:text="${list.cdModifyDate}"></td>
+       		-->
+    	</tr>
+    </table>
+</body>
+</html>
