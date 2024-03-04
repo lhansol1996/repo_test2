@@ -47,6 +47,11 @@ public class CodeGroupDto {
 	public void setModDate(Date modDate) {
 		this.modDate = modDate;
 	}
+	@Override
+	public String toString() {
+		return "CodeGroupDto [seq=" + seq + ", name=" + name + ", delNy=" + delNy + ", regDate=" + regDate
+				+ ", modDate=" + modDate + ", xcount=" + xcount + "]";
+	}
 
 	
 	

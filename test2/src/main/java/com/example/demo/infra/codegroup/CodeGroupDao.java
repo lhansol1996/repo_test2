@@ -8,5 +8,5 @@ public interface CodeGroupDao {
 	public List<CodeGroupDto> selectList();
 	
 	//DTO 중 하나를 리턴
-	public CodeGroupDto selectOne();
+	public CodeGroupDto selectOne(CodeGroupDto dto);
 }

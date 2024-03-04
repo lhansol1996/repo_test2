@@ -34,8 +34,11 @@
     	   
     		<td th:if="${list.delNy eq 0}">N</td>
     		<td th:unless="${list.delNy eq 0}">Y</td>
-    		
+    		<!-- 
     		<td th:text="${list.seq}"></td>
+    		 -->
+    		 
+    		 <td><a th:href="@{/codeGroupView(seq=${list.seq},name=${list.name})}" th:text="${list.seq}"></a> </td>
        		<td th:text="${list.name}"></td>
      		<td th:text="${list.regDate}"></td>
      		<td th:text="${#dates.format(list.modDate, 'yyyy-MM-dd일 HH:mm:ss')}"></td>

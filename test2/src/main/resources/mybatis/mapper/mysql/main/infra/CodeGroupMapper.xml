@@ -20,5 +20,16 @@
 			codeGroup a
 			
     </select>
+    
+     <select id="selectOne" resultMap="resultMapObj">
+         select 
+			seq
+			,name
+			where 1=1 
+				and	seq= #{seq}
+			from
+			codeGroup 
+		
+    </select>
 	  
 </mapper>
