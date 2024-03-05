@@ -33,4 +33,25 @@ public class CodeGroupService {
 		return codeGroupDao.selectOne(dto);
 	}
 	
+	//등록버튼
+	public int insert(CodeGroupDto dto) {
+		return codeGroupDao.insert(dto);
+	}
+	
+	
+	//수정버튼
+	public int update(CodeGroupDto dto) {
+		return codeGroupDao.update(dto);
+	}
+	
+	//삭제버튼(uelete)
+	public int uelete(CodeGroupDto dto) {
+		return codeGroupDao.uelete(dto);
+	}
+	
+	//삭제버튼(delete
+		public int delete(CodeGroupDto dto) {
+			return codeGroupDao.delete(dto);
+		}
+	
 }

@@ -6,6 +6,9 @@
     <title>codeGroupXdmList</title>
 </head>
 <body>
+
+<a th:href="@{/codeGroupRegForm}">등록</a>
+
     <table>
     	<tr>
     		<td>ch</td>
@@ -38,7 +41,7 @@
     		<td th:text="${list.seq}"></td>
     		 -->
     		 
-    		 <td><a th:href="@{/codeGroupView(seq=${list.seq},name=${list.name})}" th:text="${list.seq}"></a> </td>
+    		 <td><a th:href="@{/codeGroupView(seq=${list.seq},name=${list.name},delNy=${list.delNy})}" th:text="${list.seq}"></a> </td>
        		<td th:text="${list.name}"></td>
      		<td th:text="${list.regDate}"></td>
      		<td th:text="${#dates.format(list.modDate, 'yyyy-MM-dd일 HH:mm:ss')}"></td>

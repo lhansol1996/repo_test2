@@ -25,11 +25,47 @@
          select 
 			seq
 			,name
-			where 1=1 
-				and	seq= #{seq}
-			from
-			codeGroup 
-		
+		from
+			codeGroup  
+		where 1=1 
+			and	seq= #{seq}	
     </select>
+	  
+	  <insert id="insert">
+		insert into codeGroup(
+			name 
+			,delNy
+		)values(
+		#{name}
+		,0
+		);
+	  <selectKey resultType="String" keyProperty="seq" order="AFTER">
+	  	select last_insert_id()
+	  </selectKey>
+	  </insert>
+	  
+	  
+	  <update id="update">
+		UPDATE codeGroup
+		SET
+		name=#{name}
+		where 1=1
+			and seq=#{seq}
+	  </update>
+	  
+	  <update id="uelete">
+		UPDATE codeGroup
+		SET
+		delNy=1
+		where 1=1
+			and seq=#{seq}
+	  </update>
+	  
+	  <delete id="delete">
+	  Delete from codeGroup
+	  	where 1=1
+	  		and seq=#{seq}
+	  </delete>
+	  
 	  
 </mapper>
