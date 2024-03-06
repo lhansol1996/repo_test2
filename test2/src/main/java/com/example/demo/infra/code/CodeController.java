@@ -1,7 +1,5 @@
 package com.example.demo.infra.code;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,16 +21,8 @@ public class CodeController {
 	@RequestMapping(value = "/codeXdmList")
 	public String codeXdmList(Model model) throws Exception {
 		model.addAttribute("list", service.selectList());
-		System.out.println("-----------------------------=======================================");
-		System.out.println(model.toString());
-
-//			List <CodeDto> codeDtos = service.testList();	
-//			System.out.println("-----------------------------");
-//			for (CodeDto codeDto : codeDtos) {
-//				System.out.println(codeDto.toString());
-//			}
-//			
-//			model.addAttribute("list", codeDtos);
+//		System.out.println("-----------------------------=======================================");
+//		System.out.println(model.toString());
 
 		return "codeXdmList";
 	}
