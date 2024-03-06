@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codeRegForm</title>
+</head>
+<body>
+   코드등록화면
+   <form action="/codeInsert" method="post">
+   		<label for=itemName>코드명</label>
+   		<input type="text" id="itemName" name="name" />
+   		<label for=itemMemo>코드설명</label>
+   		<input type="text" id="itemMemo" name="memo" />
+   		<label for=itemcdg>코드그룹번호</label>
+   		<input type="text" id="itemcdg" name="xcodeGroupSeq" />
+   		<button type="submit">등록버튼</button>
+   		
+   </form>
+</body>
+</html>

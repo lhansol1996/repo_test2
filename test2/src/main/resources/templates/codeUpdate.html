@@ -6,8 +6,6 @@
     <title>codeGroupXdmList</title>
 </head>
 <body>
-	<a th:href="@{/codeRegForm}">등록</a>
-
     <table>
     	<tr>
     		<td>체크박스</td>
@@ -38,11 +36,10 @@
     	<tr th:if="${!#lists.isEmpty(list)}" th:each="list:${list}">
     	<td> </td>
     	<td> </td>
-    	 <td th:text="${list.xcodeGroupSeq}"></td>
-    		<td th:text="${list.xcodeGroupName}"></td>
+    	 <td th:text="${list.codeGroupSeq}"></td>
+    		<td th:text="${list.codeGroupName}"></td>
     		<td th:if="${list.delNy eq 0}">N</td>
-    		<td th:unless="${list.delNy eq 0}">Y</td>
-    		<td> <a th:href=@{/codeView(seq=${list.seq},name=${list.name},delNy=${list.delNy})} th:text="${list.seq}"></a></td>
+    		<td th:text="${list.seq}">N</td>
     		<td th:text="${list.name}"></td>
     		<td th:text="${#dates.format(list.modifyDate, 'yyyy-MM-dd일 HH:mm:ss')}"></td>
     	

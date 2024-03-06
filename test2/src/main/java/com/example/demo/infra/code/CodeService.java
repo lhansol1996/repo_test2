@@ -20,13 +20,40 @@ public class CodeService {
 	
 	 
 	//selectList 구현
-	public List<CodeDto> testList() {
+	public List<CodeDto> selectList() {
 /*
  * 		List<CodeGroupDto> list = codeGroupDao.selectList();
  * 		return list;
  */
 		
-		return codeDao.testList();
+		return codeDao.selectList();
 	}
 
+	//selectOne 구현
+	public CodeDto selectOne(CodeDto dto) {
+		return codeDao.selectOne(dto);
+	}
+	
+	// CRUD
+	// 생성
+	public int insert(CodeDto dto) {
+		return codeDao.insert(dto);
+	}
+	
+	
+	// 수정
+	public int update(CodeDto dto) {
+		return codeDao.update(dto);
+	}
+		
+	// 삭제 (uelete, delete)
+	// uelete
+	public int uelete(CodeDto dto) {
+		return codeDao.uelete(dto);
+	}
+	
+	//delete
+	public int delete(CodeDto dto) {
+		return codeDao.delete(dto);
+	}
 }

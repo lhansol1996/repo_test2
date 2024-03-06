@@ -3,18 +3,65 @@
 
 <mapper namespace="com.example.demo.infra.code.CodeDao">
 
-	<resultMap id="resultMapObj" type="com.example.demo.infra.code.CodeDto"></resultMap>
+	<resultMap id="resultMapObj"
+		type="com.example.demo.infra.code.CodeDto"></resultMap>
 
-    <select id="testList" resultMap="resultMapObj">
-        select 
-		a.codeGroup_seq as codeGroupSeq
-		,b.name as codeGroupName
-		,a.delNy 
+	<select id="selectList" resultMap="resultMapObj">
+		select
+		a.codeGroup_seq as xcodeGroupSeq
+		,b.name as xcodeGroupName
+		,a.delNy
 		,a.seq
 		,a.name
-		,a.modifyDate 
-		From code a join codeGroup b 
-		on a.codegroup_seq = b.seq	        
-    </select>
-	  
+		,a.modifyDate
+		From code a join codeGroup b
+		on a.codegroup_seq = b.seq
+	</select>
+
+	<select id="selectOne" resultMap="resultMapObj">
+		select
+			seq
+			,name
+			,delNy
+			From code
+		where 1=1
+				and seq=#{seq}
+	</select>
+	
+	<insert id="insert">
+		insert into code(
+			name
+		    ,memo
+		    ,delNy
+		    ,codeGroup_seq
+		   )values(
+			    #{name}
+			    ,#{memo}
+			    ,0
+			    ,#{xcodeGroupSeq}
+		    )
+	</insert>
+	
+	<update id="update">
+			UPDATE code
+		SET
+		name=#{name}
+		where 1=1
+			and seq=#{seq}
+	</update>
+	
+	<update id="uelete">
+		update code
+		set 
+		delNy=1
+		where 1=1
+		 and seq = #{seq}
+	</update>
+	
+	<delete id="delete">
+		delete From code
+		where 1=1
+			and seq=#{seq}
+	</delete>
+	
 </mapper>

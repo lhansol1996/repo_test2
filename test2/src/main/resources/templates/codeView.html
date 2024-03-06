@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codeView</title>
+</head>
+<body>
+   codeView
+   <br>
+   <span th:text="${item.seq}"></span>
+    <span th:text="${item.name}"></span>
+    <br>
+    <form action="/codeUpdate" method="post">
+	   <input type="hidden" name="seq" th:value="${item.seq}" />
+	   <input type="text" name="name" th:value="${item.name}" />
+	   <br>
+	   <button type="submit">수정</button>
+   </form>
+   
+   <form action="/codeUelete" method="post">
+	   <input type="hidden" name="seq" th:value="${item.seq}" />
+	   <input type="hidden" name="name" th:value="${item.name}" />
+	   <input type="hidden" name="delNy" th:value="${item.delNy}" />
+	   <button type="submit">uelete삭제</button>
+   </form>
+   
+   <form action="/codeDelete" method="post">
+	   <input type="hidden" name="seq" th:value="${item.seq}" />
+	   <input type="hidden" name="name" th:value="${item.name}" />
+	   <input type="hidden" name="delNy" th:value="${item.delNy}" />
+	   <button type="submit">delete삭제</button>
+   </form>
+   
+   
+</body>
+</html>
